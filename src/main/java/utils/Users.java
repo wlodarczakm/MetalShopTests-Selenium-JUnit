@@ -23,4 +23,3 @@ public class Users {
     public static Users forRegistrationUser = new Users("my_login", "MY_PASSWORD1", "my.fake.email@mail.com");
     public static Users randomRegistrationUser = new Users(randomUsername, randomPassword, randomEmailAddress);
 }
-
