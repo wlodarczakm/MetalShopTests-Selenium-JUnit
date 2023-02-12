@@ -15,7 +15,7 @@ public class Users {
         this.password = password;
         this.email = email;
     }
-    public static Users registeredUser = new Users("my_username", "MyPassword123", "" );
+    public static Users registeredUser = new Users("my_username", "MyPassword123", "myemail123@wp.pl" );
     public static Users randomUser = new Users(randomUsername, randomPassword, "");
     public static Users onlyPasswordGivenUser = new Users("", randomPassword, "");
     public static Users onlyUsernameGivenUser = new Users(randomUsername, "", "");
