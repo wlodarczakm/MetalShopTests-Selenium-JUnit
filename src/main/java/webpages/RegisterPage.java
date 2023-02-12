@@ -44,8 +44,10 @@ public class RegisterPage {
         return submitMessage.getText();
     }
     public String successRegistrationMessage = "User successfully registered.";
-    public WebElement UserExistMessage() {
-        return userExistText;
+    public String userExistMessage = "Username already exists.";
+
+    public String UserExistMessage() {
+        return userExistText.getText();
     }
 }
 

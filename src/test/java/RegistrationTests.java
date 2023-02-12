@@ -42,7 +42,7 @@ public class RegistrationTests {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='ur-submit-message-node'] ul li")));
 
-        assertTrue(registerPage.UserExistMessage().isDisplayed());
+        assertTrue(registerPage.UserExistMessage().contains(registerPage.userExistMessage));
     }
 }
 
