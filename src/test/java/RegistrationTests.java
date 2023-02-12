@@ -26,7 +26,6 @@ public class RegistrationTests {
     void closeBrowser() {
         driver.quit();
     }
-
     @Test
     void registration_success_when_new_user_credentials_given() {
         registerPage.FillInput(Users.randomRegistrationUser);
@@ -44,7 +43,6 @@ public class RegistrationTests {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='ur-submit-message-node'] ul li")));
 
         assertTrue(registerPage.UserExistMessage().isDisplayed());
-
     }
 }
 
