@@ -1,40 +1,51 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+package webpages;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import utils.Users;
-import webpages.RegisterPage;
-import java.time.Duration;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-public class RegistrationTests {
-    static WebDriver driver = new ChromeDriver();
-    static Wait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-    RegisterPage registerPage;
+public class RegisterPage {
+    WebDriver driver;
 
-    @BeforeEach
-    void prepareBrowser() {
-        driver.manage().window().maximize();
-        driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/register/");
-        registerPage = new RegisterPage(driver);
+    @FindBy(css = "input[id='user_login']")
+    WebElement usernameInput;
+
+    @FindBy(css = "input[id='user_email']")
+    WebElement emailInput;
+
+    @FindBy(css = "input[id='user_pass']")
+    WebElement passwordInput;
+
+    @FindBy(css = "input[id*='confirm']")
+    WebElement confirmPasswordInput;
+
+    @FindBy(css = "button[class*='ur-submit-button']")
+    WebElement submitButton;
+
+    @FindBy(css = "div[id='ur-submit-message-node'] ul")
+    WebElement submitMessage;
+
+    @FindBy(css= "div[id='ur-submit-message-node'] ul li")
+    WebElement userExistText;
+
+    public RegisterPage (WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
-    @AfterEach
-    void closeBrowser() {
-        driver.quit();
+    public void FillInput(Users user) {
+        usernameInput.sendKeys(user.username);
+        passwordInput.sendKeys(user.password);
+        confirmPasswordInput.sendKeys(user.password);
+        emailInput.sendKeys(user.email);
     }
-
-    @Test
-    void appear_error_message_when_registered_user_credentials_given() {
-        registerPage.FillInput(Users.randomRegistrationUser);
-        registerPage.submitRegistrationForm();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='ur-submit-message-node'] ul")));
-
-        assertTrue(registerPage.submitMessageText().contains(registerPage.successRegistrationMessage));
+    public void SubmitRegistrationForm(){submitButton.click();
+    }
+    public String SubmitMessageText() {
+        return submitMessage.getText();
+    }
+    public String successRegistrationMessage = "User successfully registered.";
+    public WebElement UserExistMessage() {
+        return userExistText;
     }
 }
 
