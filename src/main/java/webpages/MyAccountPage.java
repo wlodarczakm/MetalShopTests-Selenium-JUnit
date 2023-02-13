@@ -18,7 +18,6 @@ public class MyAccountPage {
     WebElement submitButton;
 
     @FindBy(css = "ul[class='woocommerce-error'] li")
-
     WebElement loginErrorMessage;
     @FindBy(css = "li[class*='is-active'] a")
     WebElement dashboardButton;
@@ -46,7 +45,7 @@ public class MyAccountPage {
         submitButton.click();
     }
 
-    public String errorMessageText() {
+    public String ErrorMessageText() {
         return loginErrorMessage.getText();
     }
     public WebElement getLogoutButton() {return logoutButton;
@@ -57,7 +56,7 @@ public class MyAccountPage {
     public String usernameInputIsRequiredMessage() {
         return "Nazwa użytkownika jest wymagana.";
     }
-    public String wrongUserMessage() {
+    public String NoSuchUserMessage() {
         return "wśród zarejestrowanych w witrynie użytkowników." +
                 " Jeśli nie masz pewności co do nazwy użytkownika, użyj adresu e-mail.";
     }

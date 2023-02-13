@@ -29,7 +29,7 @@ public class LoginTests {
         assertTrue(loginPage.getLogoutButton().isDisplayed());
     }
     @Test
-    void displays_dashboard_when_registered_user_login() {
+    void displays_dashboard_buttons_when_registered_user_login() {
         loginPage.FillInputs(Users.registeredUser);
         loginPage.login();
 
@@ -39,24 +39,24 @@ public class LoginTests {
         }
     }
     @Test
-    void appear_error_message_when_only_password_given() {
+    void appear_username_required_message_when_only_password_given() {
         loginPage.FillInputs(Users.onlyPasswordGivenUser);
         loginPage.login();
 
-        assertTrue(loginPage.errorMessageText().contains(loginPage.usernameInputIsRequiredMessage()));
+        assertTrue(loginPage.ErrorMessageText().contains(loginPage.usernameInputIsRequiredMessage()));
     }
     @Test
-    void appear_error_message_when_only_username_given() {
+    void appear_password_input_empty_message_when_only_username_given() {
         loginPage.FillInputs(Users.onlyUsernameGivenUser);
         loginPage.login();
 
-        assertTrue(loginPage.errorMessageText().contains(loginPage.passwordInputIsEmptyMessage()));
+        assertTrue(loginPage.ErrorMessageText().contains(loginPage.passwordInputIsEmptyMessage()));
     }
     @Test
-    void appear_error_message_when_not_registered_user_try_login() {
+    void appear_no_such_user_message_when_not_registered_user_try_login() {
         loginPage.FillInputs(Users.randomUser);
         loginPage.login();
 
-        assertTrue(loginPage.errorMessageText().contains(loginPage.wrongUserMessage()));
+        assertTrue(loginPage.ErrorMessageText().contains(loginPage.NoSuchUserMessage()));
     }
 }
