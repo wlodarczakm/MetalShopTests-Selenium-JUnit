@@ -44,5 +44,13 @@ public class RegistrationTests {
 
         assertTrue(registerPage.UserExistMessage().contains(registerPage.userExistMessage));
     }
+
+    @Test
+    void appear_email_required_message_when_email_not_given() {
+        registerPage.FillInput(Users.userWithNoEmail);
+        registerPage.SubmitRegistrationForm();
+
+        assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.emailRequiredMessageText));
+    }
 }
 

@@ -16,11 +16,12 @@ public class Users {
         this.email = email;
     }
     public static Users registeredUser = new Users("my_username", "MyPassword123", "myemail123@wp.pl" );
-    public static Users randomUser = new Users(randomUsername, randomPassword, "");
+    public static Users randomUser = new Users(randomUsername, randomPassword, randomEmailAddress);
     public static Users onlyPasswordGivenUser = new Users("", randomPassword, "");
     public static Users onlyUsernameGivenUser = new Users(randomUsername, "", "");
 
     public static Users forRegistrationUser = new Users("my_login", "MY_PASSWORD1", "my.fake.email@mail.com");
     public static Users randomRegistrationUser = new Users(randomUsername, randomPassword, randomEmailAddress);
+    public static Users userWithNoEmail = new Users(randomUsername, randomPassword, "");
 }
 

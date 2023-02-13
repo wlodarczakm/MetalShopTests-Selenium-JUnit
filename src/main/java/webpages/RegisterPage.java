@@ -28,6 +28,9 @@ public class RegisterPage {
     @FindBy(css= "div[id='ur-submit-message-node'] ul li")
     WebElement userExistText;
 
+    @FindBy(css= "label[id$='email-error']")
+    WebElement emailRequiredWarning;
+
     public RegisterPage (WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -49,5 +52,9 @@ public class RegisterPage {
     public String UserExistMessage() {
         return userExistText.getText();
     }
+    public String EmailRequiredMessage() {
+        return emailRequiredWarning.getText();
+    }
+    public String emailRequiredMessageText = "This field is required.";
 }
 
