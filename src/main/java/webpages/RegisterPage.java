@@ -57,4 +57,3 @@ public class RegisterPage {
     }
     public String emailRequiredMessageText = "This field is required.";
 }
-

@@ -24,4 +24,3 @@ public class Users {
     public static Users randomRegistrationUser = new Users(randomUsername, randomPassword, randomEmailAddress);
     public static Users userWithNoEmail = new Users(randomUsername, randomPassword, "");
 }
-

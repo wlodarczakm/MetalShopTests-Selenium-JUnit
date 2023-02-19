@@ -53,4 +53,3 @@ public class RegistrationTests {
         assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.emailRequiredMessageText));
     }
 }
-
