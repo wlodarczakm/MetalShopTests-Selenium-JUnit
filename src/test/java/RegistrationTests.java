@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,7 +19,9 @@ public class RegistrationTests {
 
     @BeforeEach
     void prepareBrowser() {
-        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/register/");
         registerPage = new RegisterPage(driver);
     }
