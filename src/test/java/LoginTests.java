@@ -2,9 +2,12 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import webpages.MyAccountPage;
 import utils.Users;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LoginTests {
     WebDriver driver = new ChromeDriver();
@@ -13,7 +16,9 @@ public class LoginTests {
     private MyAccountPage elementsAfterLogin;
     @BeforeEach
     void prepareBrowser() {
-        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/moje-konto/");
         loginPage = new MyAccountPage(driver);
         elementsAfterLogin = new MyAccountPage(driver);
