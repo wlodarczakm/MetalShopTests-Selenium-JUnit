@@ -1,4 +1,4 @@
-package utils;
+package selenium.utils;
 import com.github.javafaker.Faker;
 public class Users {
     static Faker faker = new Faker();

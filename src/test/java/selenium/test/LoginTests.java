@@ -3,8 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import webpages.MyAccountPage;
-import utils.Users;
+import selenium.pages.MyAccountPage;
+import selenium.utils.Users;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
