@@ -3,10 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.Users;
+import selenium.utils.Users;
 public class RegisterPage {
     WebDriver driver;
-
     @FindBy(css = "input[id='user_login']")
     WebElement usernameInput;
 
@@ -21,7 +20,6 @@ public class RegisterPage {
 
     @FindBy(css = "button[class*='ur-submit-button']")
     WebElement submitButton;
-
     @FindBy(css = "div[id='ur-submit-message-node'] ul")
     WebElement submitMessage;
 
