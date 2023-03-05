@@ -1,9 +1,10 @@
-package webpages;
+package selenium.pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.Users;
+import selenium.utils.Users;
 import java.util.ArrayList;
 import java.util.List;
 public class MyAccountPage {
