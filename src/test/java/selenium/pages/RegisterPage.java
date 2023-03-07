@@ -26,7 +26,7 @@ public class RegisterPage {
     @FindBy(css= "div[id='ur-submit-message-node'] ul li")
     WebElement userExistText;
 
-    @FindBy(css= "label[id$='email-error']")
+    @FindBy(css= "label[id='user_email-error']")
     WebElement emailRequiredWarning;
 
     public RegisterPage (WebDriver driver) {

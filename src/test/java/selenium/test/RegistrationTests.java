@@ -3,22 +3,17 @@ package selenium.test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import selenium.utils.Users;
 import selenium.pages.RegisterPage;
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 public class RegistrationTests {
     static WebDriver driver = new ChromeDriver();
-    static Wait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     RegisterPage registerPage;
-
     @BeforeEach
     void prepareBrowser() {
         ChromeOptions options = new ChromeOptions();
@@ -26,6 +21,7 @@ public class RegistrationTests {
         WebDriver driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/register/");
         registerPage = new RegisterPage(driver);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
     @AfterEach
     void closeBrowser() {
@@ -36,8 +32,6 @@ public class RegistrationTests {
         registerPage.FillInput(Users.randomRegistrationUser);
         registerPage.SubmitRegistrationForm();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='ur-submit-message-node'] ul")));
-
         assertTrue(registerPage.SubmitMessageText().contains(registerPage.successRegistrationMessage));
     }
     @Test
@@ -45,11 +39,8 @@ public class RegistrationTests {
         registerPage.FillInput(Users.registeredUser);
         registerPage.SubmitRegistrationForm();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[id='ur-submit-message-node'] ul li")));
-
         assertTrue(registerPage.UserExistMessage().contains(registerPage.userExistMessage));
     }
-
     @Test
     void appear_email_required_message_when_email_not_given() {
         registerPage.FillInput(Users.userWithNoEmail);
