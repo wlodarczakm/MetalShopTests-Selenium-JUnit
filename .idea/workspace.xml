@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75165d1-c7b9-4803-88fa-ced73987c983" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/pages/ContactPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/pages/ContactPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/test/ContactPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/test/ContactPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/utils/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/utils/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalShopTests.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/pages/ContactPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/test/ContactPageTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/utils/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-cli/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-cli/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-selenium.test.ContactPageTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/selenium.test.ContactPageTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/selenium/pages/ContactPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/selenium/test/ContactPageTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/selenium/utils/Users.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +42,10 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProblemsViewState">
@@ -63,7 +77,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ContactPageTests">
+  <component name="RunManager" selected="JUnit.ContactPageTests.ContactMessage">
     <configuration name="ContactPageTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MetalShopTests" />
       <extension name="coverage">
@@ -142,23 +156,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="MetalShopTests" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MetalShopTests" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContactPageTests" />
         <item itemvalue="JUnit.ContactPageTests.ContactMessage" />
+        <item itemvalue="JUnit.ContactPageTests" />
         <item itemvalue="JUnit.RegistrationTests" />
         <item itemvalue="JUnit.RegistrationTests.appear_email_required_message_when_email_not_given" />
         <item itemvalue="JUnit.RegistrationTests.registration_success_when_new_user_credentials_given" />
@@ -200,6 +201,7 @@
       <workItem from="1678186457743" duration="827000" />
       <workItem from="1678188014564" duration="926000" />
       <workItem from="1678199529521" duration="1960000" />
+      <workItem from="1678254616077" duration="3041000" />
     </task>
     <servers />
   </component>
@@ -219,38 +221,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/selenium/pages/ContactPage.java</url>
-          <line>28</line>
-          <properties class="selenium.pages.ContactPage" method="FillInput">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/selenium/pages/ContactPage.java</url>
-          <line>24</line>
-          <properties class="selenium.pages.ContactPage" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/selenium/test/ContactPageTests.java</url>
-          <line>36</line>
-          <properties class="selenium.test.ContactPageTests" method="ContactMessage">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
