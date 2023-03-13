@@ -6,21 +6,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.pages.MyAccountPage;
+import selenium.utils.TestSettings;
 import selenium.utils.Users;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LoginTests {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
     MyAccountPage loginPage;
+//    TestSettings aDriverSetup;
     List<WebElement> elements;
-    private MyAccountPage elementsAfterLogin;
+    MyAccountPage elementsAfterLogin;
     @BeforeEach
     void prepareBrowser() {
+//        aDriverSetup = new TestSettings();
+//        aDriverSetup.setupDriver();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        WebDriver driver = new ChromeDriver(options);
+        options.addArguments("--remote-allow-origins=*", "--start-maximized");
+        driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/moje-konto/");
         loginPage = new MyAccountPage(driver);
         elementsAfterLogin = new MyAccountPage(driver);
