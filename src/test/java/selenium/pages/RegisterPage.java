@@ -29,17 +29,24 @@ public class RegisterPage {
     @FindBy(css= "label[id='user_email-error']")
     WebElement emailRequiredWarning;
 
+    RegisterPage newUserCredentials;
+
     public RegisterPage (WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void FillInput(Users user) {
+
+    public void RegisterANewUser() {
+        newUserCredentials.FillInAForm(Users.randomRegistrationUser);
+    }
+    public void FillInAForm(Users user) {
         usernameInput.sendKeys(user.username);
         passwordInput.sendKeys(user.password);
         confirmPasswordInput.sendKeys(user.password);
         emailInput.sendKeys(user.email);
     }
-    public void SubmitRegistrationForm(){submitButton.click();
+    public void FormSubmission() {
+        submitButton.click();
     }
     public String SubmitMessageText() {
         return submitMessage.getText();

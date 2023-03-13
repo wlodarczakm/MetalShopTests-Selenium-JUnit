@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75165d1-c7b9-4803-88fa-ced73987c983" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-selenium.test.RegistrationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-selenium.test.RegistrationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/selenium.test.RegistrationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/selenium.test.RegistrationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetalShopTests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MetalShopTests.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/pages/RegisterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/selenium/test/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/test/RegistrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.RegistrationTests">
+  <component name="RunManager" selected="JUnit.RegistrationTests.registration_success_when_new_user_credentials_given">
     <configuration name="LoginTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MetalShopTests" />
       <extension name="coverage">
@@ -143,9 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegistrationTests.registration_success_when_new_user_credentials_given" />
         <item itemvalue="JUnit.RegistrationTests" />
         <item itemvalue="JUnit.RegistrationTests.appear_email_required_message_when_email_not_given" />
-        <item itemvalue="JUnit.RegistrationTests.registration_success_when_new_user_credentials_given" />
         <item itemvalue="JUnit.RegistrationTests.appear_user_exist_message_when_registered_user_credentials_given" />
         <item itemvalue="JUnit.LoginTests (1)" />
       </list>
@@ -186,6 +189,7 @@
       <workItem from="1678186457743" duration="827000" />
       <workItem from="1678188014564" duration="926000" />
       <workItem from="1678199529521" duration="1960000" />
+      <workItem from="1678734510828" duration="1810000" />
     </task>
     <servers />
   </component>
