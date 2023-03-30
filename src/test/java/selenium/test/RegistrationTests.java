@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.pages.RegisterPage;
 import java.util.concurrent.TimeUnit;
+import selenium.utils.TestSettings;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static selenium.pages.RegisterPage.*;
@@ -19,9 +20,9 @@ public class RegistrationTests {
 
     @BeforeEach
     void prepareBrowser() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/register/");
         driver.manage().window().maximize();
         registerPage = new RegisterPage(driver);
