@@ -9,8 +9,5 @@
         <module name="MetalShopTests" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MetalShopTests" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

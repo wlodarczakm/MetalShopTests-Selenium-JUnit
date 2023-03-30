@@ -29,21 +29,52 @@ public class RegisterPage {
     @FindBy(css= "label[id='user_email-error']")
     WebElement emailRequiredWarning;
 
-    RegisterPage newUserCredentials;
-
     public RegisterPage (WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void RegisterANewUser() {
-        newUserCredentials.FillInAForm(Users.randomRegistrationUser);
+    public static final int NEW_USER_REGISTER = 1;
+    public static final int REGISTERED_USER_CREDENTIALS = 2;
+    public static final int USER_EMAIL_NOT_GIVEN = 3;
+
+
+
+    public void FillInAForm(int methodIndex) {
+        switch (methodIndex) {
+            case NEW_USER_REGISTER:
+                NewUserRegister();
+                break;
+            case REGISTERED_USER_CREDENTIALS:
+                RegisteredUserCredentials();
+                break;
+            case USER_EMAIL_NOT_GIVEN:
+                UserCredentialsWithoutEmail();
+                break;
+            default:
+                throw new IllegalArgumentException("Wrong method index");
+        }
     }
-    public void FillInAForm(Users user) {
-        usernameInput.sendKeys(user.username);
-        passwordInput.sendKeys(user.password);
-        confirmPasswordInput.sendKeys(user.password);
-        emailInput.sendKeys(user.email);
+    @Deprecated
+    public void NewUserRegister() {
+        usernameInput.sendKeys(Users.username);
+        passwordInput.sendKeys(Users.userPassword);
+        confirmPasswordInput.sendKeys(Users.userPassword);
+        emailInput.sendKeys(Users.email);
+    }
+    @Deprecated
+    public void RegisteredUserCredentials() {
+        usernameInput.sendKeys(Users.registeredUsername);
+        passwordInput.sendKeys(Users.registeredUserPassword);
+        confirmPasswordInput.sendKeys(Users.registeredUserPassword);
+        emailInput.sendKeys(Users.registeredUserEmail);
+    }
+    @Deprecated
+    public void UserCredentialsWithoutEmail() {
+        usernameInput.sendKeys(Users.registeredUsername);
+        passwordInput.sendKeys(Users.registeredUserPassword);
+        confirmPasswordInput.sendKeys(Users.registeredUserPassword);
+        emailInput.sendKeys("");
     }
     public void FormSubmission() {
         submitButton.click();

@@ -6,22 +6,27 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import selenium.utils.Users;
 import selenium.pages.RegisterPage;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static selenium.pages.RegisterPage.*;
+
 public class RegistrationTests {
-    WebDriver driver;
-    RegisterPage registerPage;
+
+    private RegisterPage registerPage;
+    private WebDriver driver;
+
     @BeforeEach
     void prepareBrowser() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*", "--start-maximized");
-        driver = new ChromeDriver(options);
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver();
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/register/");
+        driver.manage().window().maximize();
         registerPage = new RegisterPage(driver);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
     }
     @AfterEach
     void closeBrowser() {
@@ -29,22 +34,21 @@ public class RegistrationTests {
     }
     @Test
     void registration_success_when_new_user_credentials_given() {
-//        registerPage.FillInAForm(Users.randomRegistrationUser);
-        registerPage.RegisterANewUser();
+        registerPage.FillInAForm(NEW_USER_REGISTER);
         registerPage.FormSubmission();
 
         assertTrue(registerPage.SubmitMessageText().contains(registerPage.successRegistrationMessage));
     }
     @Test
     void appear_user_exist_message_when_registered_user_credentials_given() {
-        registerPage.FillInAForm(Users.registeredUser);
+        registerPage.FillInAForm(REGISTERED_USER_CREDENTIALS);
         registerPage.FormSubmission();
 
         assertTrue(registerPage.UserExistMessage().contains(registerPage.userExistMessage));
     }
     @Test
     void appear_email_required_message_when_email_not_given() {
-        registerPage.FillInAForm(Users.userWithNoEmail);
+        registerPage.FillInAForm(USER_EMAIL_NOT_GIVEN);
         registerPage.FormSubmission();
 
         assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.emailRequiredMessageText));
