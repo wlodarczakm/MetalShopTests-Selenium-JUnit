@@ -33,25 +33,33 @@ public class RegistrationTests {
     void closeBrowser() {
         driver.quit();
     }
+
     @Test
-    void registration_success_when_new_user_credentials_given() {
-        registerPage.FillInAForm(NEW_USER_REGISTER);
+    void registration_success_when_new_user_data_given() {
+        registerPage.FillOutAForm(NEW_USER_DATA);
         registerPage.FormSubmission();
 
-        assertTrue(registerPage.SubmitMessageText().contains(registerPage.successRegistrationMessage));
+        assertTrue(registerPage.UserRegisteredMessage().contains(registerPage.ShouldDisplayText_RegistrationSuccess));
     }
     @Test
     void appear_user_exist_message_when_registered_user_credentials_given() {
-        registerPage.FillInAForm(REGISTERED_USER_CREDENTIALS);
+        registerPage.FillOutAForm(REGISTERED_USER_CREDENTIALS);
         registerPage.FormSubmission();
 
-        assertTrue(registerPage.UserExistMessage().contains(registerPage.userExistMessage));
+        assertTrue(registerPage.UserExistMessage().contains(registerPage.ShouldDisplay_UserExistMessageText));
     }
     @Test
     void appear_email_required_message_when_email_not_given() {
-        registerPage.FillInAForm(USER_EMAIL_NOT_GIVEN);
+        registerPage.FillOutAForm(USER_EMAIL_NOT_GIVEN);
         registerPage.FormSubmission();
 
         assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.emailRequiredMessageText));
+    }
+    @Test
+    void appear_username_required_message_when_username_not_given() {
+        registerPage.FillOutAForm(USERNAME_NOT_GIVEN);
+        registerPage.FormSubmission();
+
+        assertTrue(registerPage.RequiredInput_Username_Message().contains(registerPage.ShouldDisplayText_UsernameRequired));
     }
 }
