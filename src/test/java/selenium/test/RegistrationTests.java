@@ -8,8 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.pages.RegisterPage;
 import java.util.concurrent.TimeUnit;
-import selenium.utils.TestSettings;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static selenium.pages.RegisterPage.*;
 
@@ -53,7 +51,7 @@ public class RegistrationTests {
         registerPage.FillOutAForm(USER_EMAIL_NOT_GIVEN);
         registerPage.FormSubmission();
 
-        assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.emailRequiredMessageText));
+        assertTrue(registerPage.EmailRequiredMessage().contains(registerPage.ShouldDisplay_EmailRequiredMessageText));
     }
     @Test
     void appear_username_required_message_when_username_not_given() {

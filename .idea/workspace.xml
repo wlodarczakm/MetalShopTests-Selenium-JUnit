@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75165d1-c7b9-4803-88fa-ced73987c983" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/selenium/pages/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/pages/RegisterPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/selenium/test/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/test/RegistrationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/selenium/utils/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selenium/utils/Users.java" afterDir="false" />
@@ -199,7 +198,7 @@
       <workItem from="1680194673334" duration="2540000" />
       <workItem from="1680198385266" duration="112000" />
       <workItem from="1680198734136" duration="5247000" />
-      <workItem from="1680423818323" duration="4501000" />
+      <workItem from="1680423818323" duration="5090000" />
     </task>
     <servers />
   </component>

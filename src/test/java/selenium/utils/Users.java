@@ -19,8 +19,6 @@ public class Users {
         this.registeredUsername = registeredUsername;
         this.registeredUserPassword = registeredUserPassword;
         this.registeredUserEmail = registereUserEmail;
-
-
     }
 }
 //    public static Users registeredUser = new Users("my_username", "MyPassword123", "myemail123@wp.pl" );
