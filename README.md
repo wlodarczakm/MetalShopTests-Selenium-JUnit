@@ -4,5 +4,8 @@
 Automated Tests of the [Metal Shop](http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/ "Softie's Metal Shop Homepage") website.
 ![metal-shop-main-pg](https://user-images.githubusercontent.com/120977639/229567796-15e8d500-ab8f-4ec8-8974-f92fc62c31bb.png)
 
-
-
+## Automated functional tests include:
+- Signing up on the Register page
+- Signing in on the My account page
+- Verifying contact form submission
+- Testing visibility of user Dashboard elements
