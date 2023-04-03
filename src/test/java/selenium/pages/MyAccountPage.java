@@ -56,6 +56,8 @@ public class MyAccountPage {
                 UserData_UsernameNotGive();
                 break;
             case PASSWORD_NOT_GIVEN:
+                UserData_NewUser_password_not_given();
+                break;
             default:
                 throw new IllegalArgumentException("Wrong method index");
         }
