@@ -12,6 +12,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static selenium.pages.MyAccountPage.*;
+
 public class LoginTests {
     WebDriver driver;
     MyAccountPage loginPage;
@@ -19,29 +21,29 @@ public class LoginTests {
     List<WebElement> elements;
     MyAccountPage elementsAfterLogin;
     @BeforeEach
-    void prepareBrowser() {
+    void prepareDriver() {
 //        aDriverSetup = new TestSettings();
 //        aDriverSetup.setupDriver();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*", "--start-maximized");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/moje-konto/");
         loginPage = new MyAccountPage(driver);
         elementsAfterLogin = new MyAccountPage(driver);
     }
     @AfterEach
-    void closeBrowser() {
+    void closeDriver() {
         driver.quit();
     }
     @Test
     void login_when_credentials_are_correct() {
-        loginPage.FillInputs(Users.registeredUser);
+        loginPage.FillInputs(REGISTERED_USER_CREDENTIALS);
         loginPage.login();
         assertTrue(loginPage.getLogoutButton().isDisplayed());
     }
     @Test
     void displays_dashboard_buttons_when_registered_user_login() {
-        loginPage.FillInputs(Users.registeredUser);
+        loginPage.FillInputs(REGISTERED_USER_CREDENTIALS);
         loginPage.login();
 
         elements = elementsAfterLogin.DashboardElements();
@@ -51,21 +53,21 @@ public class LoginTests {
     }
     @Test
     void appear_username_required_message_when_only_password_given() {
-        loginPage.FillInputs(Users.onlyPasswordGivenUser);
+        loginPage.FillInputs(USERNAME_NOT_GIVEN);
         loginPage.login();
 
         assertTrue(loginPage.ErrorMessageText().contains(loginPage.usernameInputIsRequiredMessage()));
     }
     @Test
     void appear_password_input_empty_message_when_only_username_given() {
-        loginPage.FillInputs(Users.onlyUsernameGivenUser);
+        loginPage.FillInputs(PASSWORD_NOT_GIVEN);
         loginPage.login();
 
         assertTrue(loginPage.ErrorMessageText().contains(loginPage.passwordInputIsEmptyMessage()));
     }
     @Test
-    void appear_no_such_user_message_when_not_registered_user_try_login() {
-        loginPage.FillInputs(Users.randomUser);
+    void appear_no_such_user_message_when_not_registered_user_try_to_login() {
+        loginPage.FillInputs(NEW_USER_DATA);
         loginPage.login();
 
         assertTrue(loginPage.ErrorMessageText().contains(loginPage.NoSuchUserMessage()));
