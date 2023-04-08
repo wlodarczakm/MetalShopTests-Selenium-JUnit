@@ -6,11 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import selenium.pages.MyAccountPage;
-import selenium.utils.TestSettings;
-import selenium.utils.Users;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static selenium.pages.MyAccountPage.*;
 
@@ -20,10 +17,9 @@ public class LoginTests {
 //    TestSettings aDriverSetup;
     List<WebElement> elements;
     MyAccountPage elementsAfterLogin;
+    WebDriver setupDRIVER;
     @BeforeEach
     void prepareDriver() {
-//        aDriverSetup = new TestSettings();
-//        aDriverSetup.setupDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
