@@ -15,12 +15,8 @@ import static selenium.pages.MyAccountPage.*;
 public class LoginTests {
     WebDriver driver;
     MyAccountPage loginPage;
-
-    HelperClaseeTest LOGOUTBUT;
-//    TestSettings aDriverSetup;
     List<WebElement> elements;
     MyAccountPage elementsAfterLogin;
-    WebDriver setupDRIVER;
     @BeforeEach
     void prepareDriver() {
         ChromeOptions options = new ChromeOptions();
@@ -29,8 +25,6 @@ public class LoginTests {
         driver.get("http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/moje-konto/");
         loginPage = new MyAccountPage(driver);
         elementsAfterLogin = new MyAccountPage(driver);
-
-        LOGOUTBUT = new HelperClaseeTest(driver);
     }
     @AfterEach
     void closeDriver() {
