@@ -18,6 +18,5 @@ public class Users {
         this.email = randomEmailAddress;
         this.subject = randomTopic;
         this.message = randomMessage;
-
     }
 }

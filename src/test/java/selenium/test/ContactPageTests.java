@@ -31,7 +31,6 @@ public class ContactPageTests {
     void closeBrowser() {
         driver.quit();
     }
-
     @Test
     void error_message_occurs_when_contact_message_sent() {
         contactPage.FillInput();

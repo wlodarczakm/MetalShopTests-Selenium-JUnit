@@ -35,12 +35,10 @@ public class ContactPage {
     @FindBy(css = "span[data-name='your-name'] span[class='wpcf7-not-valid-tip']")
     WebElement requiredField_fullName;
 
-
     public ContactPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
     public List<WebElement> ContactFormElements() {
         List<WebElement> allDashboardElements = new ArrayList<>();
         allDashboardElements.add(fullNameInput);
@@ -49,13 +47,6 @@ public class ContactPage {
         allDashboardElements.add(messageInput);
         return allDashboardElements;
 
-    }
-
-    public void WaitClass() {
-        WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofSeconds(1));
-        for (WebElement element : ContactFormElements()) {
-            WAIT.until(ExpectedConditions.visibilityOfAllElements(element));
-        }
     }
     public void FillInput(String... fieldValues) {
         user = new Users();
@@ -70,7 +61,6 @@ public class ContactPage {
         subjectInput.sendKeys(subjectValue);
         messageInput.sendKeys(messageValue);
     }
-
     public void WaitForErrorMessage() {
         WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofSeconds(1));
         WAIT.until(ExpectedConditions.visibilityOf(sendContactMessageError));
@@ -78,17 +68,14 @@ public class ContactPage {
     public void submitContactForm(){
         submit.click();
     }
-
     public boolean AppearErrorWhenSendingMessage() {
         return sendContactMessageError.getText().contains
             ("Wystąpił problem z wysłaniem twojej wiadomości. Spróbuj ponownie później.");
     }
-
     public void WaitForRequiredFieldErrorMessage() {
         WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofSeconds(1));
         WAIT.until(ExpectedConditions.visibilityOf(requiredField_fullName));
     }
-
     public WebElement[] RequiredFields() {
         WebElement[] getRequiredFields = new WebElement[2];
         getRequiredFields[0] = requiredField_fullName;
