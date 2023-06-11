@@ -29,6 +29,11 @@ public class ContactPage {
     @FindBy(css = "div[class='wpcf7-response-output']")
     WebElement sendContactMessageError;
 
+    @FindBy(css = "span[data-name='your-email'] span[class='wpcf7-not-valid-tip']")
+    WebElement requiredField_email;
+
+    @FindBy(css = "span[data-name='your-name'] span[class='wpcf7-not-valid-tip']")
+    WebElement requiredField_fullName;
 
 
     public ContactPage(WebDriver driver) {
@@ -52,16 +57,21 @@ public class ContactPage {
             WAIT.until(ExpectedConditions.visibilityOfAllElements(element));
         }
     }
-    public void FillInput() {
+    public void FillInput(String... fieldValues) {
         user = new Users();
 
-        fullNameInput.sendKeys(user.fullName);
-        emailInput.sendKeys(user.email);
-        subjectInput.sendKeys(user.subject);
-        messageInput.sendKeys(user.message);
+        String fullNameValue = fieldValues.length > 0 ? fieldValues[0] : user.fullName;
+        String emailValue = fieldValues.length > 1 ? fieldValues[1] : user.email;
+        String subjectValue = fieldValues.length > 2 ? fieldValues[2] : user.subject;
+        String messageValue = fieldValues.length > 3 ? fieldValues[3] : user.message;
+
+        fullNameInput.sendKeys(fullNameValue);
+        emailInput.sendKeys(emailValue);
+        subjectInput.sendKeys(subjectValue);
+        messageInput.sendKeys(messageValue);
     }
 
-    public void WaitForErroMessage() {
+    public void WaitForErrorMessage() {
         WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofSeconds(1));
         WAIT.until(ExpectedConditions.visibilityOf(sendContactMessageError));
     }
@@ -72,5 +82,17 @@ public class ContactPage {
     public boolean AppearErrorWhenSendingMessage() {
         return sendContactMessageError.getText().contains
             ("Wystąpił problem z wysłaniem twojej wiadomości. Spróbuj ponownie później.");
+    }
+
+    public void WaitForRequiredFieldErrorMessage() {
+        WebDriverWait WAIT = new WebDriverWait(driver, Duration.ofSeconds(1));
+        WAIT.until(ExpectedConditions.visibilityOf(requiredField_fullName));
+    }
+
+    public WebElement[] RequiredFields() {
+        WebElement[] getRequiredFields = new WebElement[2];
+        getRequiredFields[0] = requiredField_fullName;
+        getRequiredFields[1] = requiredField_email;
+        return getRequiredFields;
     }
 }
