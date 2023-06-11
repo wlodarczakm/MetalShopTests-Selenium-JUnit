@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: selenium.test.LoginTests
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.392 s - in selenium.test.LoginTests
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 35.192 s - in selenium.test.LoginTests
