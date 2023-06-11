@@ -15,7 +15,7 @@ Tests are in this repository on separate branches:
 
 ## Automated functional tests include:
 - Signing up on the [Register page](#register-page-tests-code-snippet)
-- Signing in on the [My account(login) page](#login-page-tests-code-snippet)
+- Signing in on the [My account page (login page)](#login-page-tests-code-snippet)
 - Verifying contact form submission
 - Testing visibility of user Dashboard elements
 
