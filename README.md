@@ -1,11 +1,13 @@
 # MetalShopTests
 #### This is my Selenium automation tests project in Java with Page Object Model implementation, Page Factory and JUnit framework.
 
-Automated Tests of the [Metal Shop](http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/ "Softie's Metal Shop Homepage") website.
 Tests are in this repository on separate branches:
-- [Login tests](https://github.com/wlodarczakm/MetalShopTests/tree/feature-login-tests "feature-login-tests")
 - [Registration tests](https://github.com/wlodarczakm/MetalShopTests/tree/feature-registration-tests "feature-registration-tests")
+- [Login tests](https://github.com/wlodarczakm/MetalShopTests/tree/feature-login-tests "feature-login-tests")
 - [Contact Form tests](https://github.com/wlodarczakm/MetalShopTests/tree/feature-contact-form-tests "feature-contact-form-tests")
+
+Automated Tests of the [Metal Shop](http://serwer169007.lh.pl/autoinstalator/serwer169007.lh.pl/wordpress10772/ "Softie's Metal Shop Homepage") website.  
+(Webpage preview image - below)
 
 ![metal-shop-main-pg](https://user-images.githubusercontent.com/120977639/229567796-15e8d500-ab8f-4ec8-8974-f92fc62c31bb.png)
 
@@ -15,7 +17,7 @@ Tests are in this repository on separate branches:
 - Verifying contact form submission
 - Testing visibility of user Dashboard elements
 
-#### #Register page tests code snippet:
+#### #Registeration tests code snippet:
 ```
     @BeforeEach
     void prepareBrowser() {
