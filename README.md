@@ -51,7 +51,7 @@ The snippet includes a new user registration test
 Below you can see a Maven Surfire Report:
 ![maven-surfire-report-registration-tests](https://user-images.githubusercontent.com/120977639/229592446-3b04929b-9ecd-45a4-b62c-678f0dd27b7d.png)
 
-and here is Maven output log:
+and here is Maven's output log:
 ```
 -------------------------------------------------------------------------------
 Test set: selenium.test.RegistrationTests
