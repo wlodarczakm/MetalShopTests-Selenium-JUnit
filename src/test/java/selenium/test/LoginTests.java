@@ -60,7 +60,7 @@ public class LoginTests {
         assertTrue(loginPage.ErrorMessageText().contains(loginPage.passwordInputIsEmptyMessage()));
     }
     @Test
-    void appear_no_such_user_message_when_not_registered_user_try_to_login() {
+    void appear_no_such_user_message_when_not_registered_user_given() {
         loginPage.FillInputs(NEW_USER_DATA);
         loginPage.pressLoginButton();
 
